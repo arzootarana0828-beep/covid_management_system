@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Details</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/add">Add Patient</a>
+    <a href="/patients">Patients</a>
+    <a href="/dashboard">Dashboard</a>
+</nav>
+
+<div class="container">
+
+    <h1>Patient Details</h1>
+
+    <p><strong>ID:</strong> {{ patient[0] }}</p>
+    <p><strong>Name:</strong> {{ patient[1] }}</p>
+    <p><strong>Age:</strong> {{ patient[2] }}</p>
+    <p><strong>Gender:</strong> {{ patient[3] }}</p>
+    <p><strong>Phone:</strong> {{ patient[4] }}</p>
+    <p><strong>Address:</strong> {{ patient[5] }}</p>
+    <p><strong>Test Result:</strong> {{ patient[6] }}</p>
+    <p><strong>Vaccination Status:</strong> {{ patient[7] }}</p>
+
+    <br>
+
+    <a href="/patients" class="btn">Back to Patients</a>
+
+</div>
+
+</body>
+</html>
+

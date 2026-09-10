@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COVID Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .hero {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(8, 32, 52, 0.78),
+                    rgba(8, 32, 52, 0.78)
+                ),
+                url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2000&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 40px 25px;
+        }
+
+        .hero-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 52px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .hero h2 {
+            color: #d9f3ff;
+            font-size: 25px;
+            font-weight: normal;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #e8f5fa;
+            max-width: 700px;
+            margin: 20px auto 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background-color: #1f9ed1;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background-color: #147da9;
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            background-color: white;
+            color: #1f4e79;
+        }
+
+        .secondary-btn:hover {
+            background-color: #e8f5fa;
+            transform: translateY(-3px);
+        }
+
+        .features {
+            margin-top: 45px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            width: 190px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 28px;
+        }
+
+        .feature h3 {
+            margin: 10px 0 5px;
+            color: white;
+        }
+
+        .feature p {
+            font-size: 14px;
+            margin: 0;
+            color: #e8f5fa;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/add">Add Patient</a>
+    <a href="/patients">Patients</a>
+    <a href="/dashboard">Dashboard</a>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">🏥</div>
+
+        <h1>COVID Management System</h1>
+
+        <h2>Smart & Secure Patient Management</h2>
+
+        <p>
+            A centralized healthcare management system designed to
+            manage patient records, COVID test results and vaccination
+            information efficiently and securely.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/add" class="hero-btn primary-btn">
+                + Add Patient
+            </a>
+
+            <a href="/patients" class="hero-btn secondary-btn">
+                View Patients
+            </a>
+
+            <a href="/dashboard" class="hero-btn secondary-btn">
+                View Dashboard
+            </a>
+
+        </div>
+</section>
+
+</body>
+</html>

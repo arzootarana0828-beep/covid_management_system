@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COVID Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/add">Add Patient</a>
+    <a href="/patients">Patients</a>
+    <a href="/dashboard">Dashboard</a>
+</nav>
+
+<div class="container">
+
+    <h1>COVID Management Dashboard</h1>
+
+    <div class="dashboard">
+
+        <a href="/patients" class="card">
+            <h3>Total Patients</h3>
+            <h2>{{ total }}</h2>
+        </a>
+
+        <a href="/search?test_result=Positive" class="card">
+            <h3>Positive Cases</h3>
+            <h2>{{ positive }}</h2>
+        </a>
+
+        <a href="/search?test_result=Negative" class="card">
+            <h3>Negative Cases</h3>
+            <h2>{{ negative }}</h2>
+        </a>
+
+        <a href="/search?vaccination_status=Vaccinated" class="card">
+            <h3>Vaccinated</h3>
+            <h2>{{ vaccinated }}</h2>
+        </a>
+
+        <a href="/search?vaccination_status=Not%20Vaccinated" class="card">
+            <h3>Not Vaccinated</h3>
+            <h2>{{ not_vaccinated }}</h2>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
