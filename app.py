@@ -3,20 +3,24 @@ import mysql.connector
 
 app = Flask(__name__)
 
+
 def get_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="my password",
+        password="arzoo",
         database="covidmanagement"
     )
+
 
 @app.route("/")
 def home():
     return render_template("index.html")
 
+
 @app.route("/patients")
 def patients():
+
     connection = get_connection()
     cursor = connection.cursor()
 
@@ -27,6 +31,7 @@ def patients():
     connection.close()
 
     return render_template("patients.html", patients=patients)
+
 
 @app.route("/add", methods=["GET", "POST"])
 def add_patient():
@@ -69,6 +74,7 @@ def add_patient():
         return redirect("/patients")
 
     return render_template("add_patient.html")
+
 
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit_patient(id):
@@ -129,6 +135,7 @@ def edit_patient(id):
 
     return render_template("edit_patient.html", patient=patient)
 
+
 @app.route("/delete/<int:id>")
 def delete_patient(id):
 
@@ -146,6 +153,7 @@ def delete_patient(id):
     connection.close()
 
     return redirect("/patients")
+
 
 @app.route("/search")
 def search_patient():
@@ -183,6 +191,7 @@ def search_patient():
 
     return render_template("patients.html", patients=patients)
 
+
 @app.route("/view/<int:id>")
 def view_patient(id):
 
@@ -203,7 +212,8 @@ def view_patient(id):
         "view_patient.html",
         patient=patient
     )
-    
+
+
 @app.route("/dashboard")
 def dashboard():
 
@@ -244,6 +254,7 @@ def dashboard():
         vaccinated=vaccinated,
         not_vaccinated=not_vaccinated
     )
+
 
 if __name__ == "__main__":
     app.run(debug=True)
